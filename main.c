@@ -2,30 +2,25 @@
 #include <stdlib.h>
 
 int main() {
-    int v1[10];
-    int v2[10];
+    float vetor[10];
+    float soma = 0.0;
+    float media = 0.0;
     int i;
 
-    printf("Digite 10 numeros inteiros:\n");
+    printf("Digite 10 numeros:\n");
     for(i = 0; i < 10; i++) {
-        printf("Posicao %d: ", i + 1);
-        scanf("%d", &v1[i]);
+        printf("Numero %d: ", i + 1);
+        scanf("%f", &vetor[i]);
     }
 
     for(i = 0; i < 10; i++) {
-        v2[i] = v1[9 - i];
+        soma += vetor[i];
     }
 
-    printf("\n--- Vetor 1 (Original) ---\n");
-    for(i = 0; i < 10; i++) {
-        printf("%d ", v1[i]);
-    }
+    media = soma / 10;
 
-    printf("\n\n--- Vetor 2 (Invertido) ---\n");
-    for(i = 0; i < 10; i++) {
-        printf("%d ", v2[i]);
-    }
-    printf("\n\n");
+    printf("\n--- Resultado ---\n");
+    printf("A media dos valores informados eh: %.2f\n\n", media);
 
     system("pause");
 
